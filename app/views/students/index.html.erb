@@ -1,0 +1,11 @@
+<h1>Students index</h1>
+<table border>
+     <%@students.each do | std | %>
+        <tr>
+            <td><%= link_to std.name,student_path(std)%></td>
+            <td><%= button_to "Edit" , edit_student_path(std), method:"get"%></td>
+            <td><%= button_to "Remove",student_path(std), method:"delete", data:{confirm:"Are You Sure"}%></td>
+        </tr>
+    <% end %>
+    <%= link_to "Add Student" , new_student_path %>
+</table>
